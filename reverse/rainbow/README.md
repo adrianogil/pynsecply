@@ -1,0 +1,1 @@
+words_pt.txt -> download from https://raw.githubusercontent.com/pythonprobr/palavras/master/palavras.txt (Repo https://github.com/pythonprobr/palavras)
