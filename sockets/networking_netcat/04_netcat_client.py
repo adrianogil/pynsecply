@@ -26,9 +26,9 @@ def verify_word_in_dictionary(word):
             count = count + 1
         ws_count = ws_count + 1
 
-def netcat_attempts_to_login(ws_start = 0, w_start = 0):
+def netcat_attempts_to_login(lab_port=PORT, ws_start = 0, w_start = 0):
     s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    s.connect(( HOSTNAME, PORT ))
+    s.connect(( HOSTNAME, lab_port ))
     data = s.recv(1024)
     print data
 
@@ -112,5 +112,5 @@ if __name__ == '__main__':
     # text_recved = netcat( text_to_send)
     # if text_recved:
     #     print text_recved
-    netcat_attempts_to_login(int(sys.argv[1]), int(sys.argv[2]))
+    netcat_attempts_to_login(int(sys.argv[1]), int(sys.argv[2]), int(sys.argv[3]))
     # verify_word_in_dictionary(sys.argv[1])
