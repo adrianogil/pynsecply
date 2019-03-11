@@ -18,7 +18,8 @@ def udp_client():
     client = socket.socket( socket.AF_INET, socket.SOCK_DGRAM)
     client.sendto(DATA, ( HOST, PORT ))
     data, addr = client.recvfrom(4096)
-    print data, addr
+    print "From: " + addr
+    print data
 
 if __name__ == '__main__':
     udp_client()
