@@ -6,13 +6,13 @@ import sys
 sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
 # Bind the socket to the port
-server_address = ('localhost', 10000)
+server_address = ('localhost', 11111)
 print >>sys.stderr, 'starting up on %s port %s' % server_address
 sock.connect(server_address)
 
 try:
     #Send data
-    message = 'This is the message. It will be repeated.'
+    message = 'This is the message. It will be repeated.<EOF>'
     print >>sys.stderr, 'sending %s' % message
     sock.sendall(message)
 

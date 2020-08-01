@@ -5,13 +5,13 @@ import sys
 sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
 # Connect the socket to the port on the server given by the caller
-server_address = (sys.argv[1], 10000)
+server_address = (sys.argv[1], 11111)
 print >>sys.stderr, 'connecting to %s port %s' % server_address
 sock.connect(server_address)
 
 try:
-    
-    message = 'This is the message.  It will be repeated.'
+
+    message = '<EOF>This is the message.  It will be repeated.'
     print >>sys.stderr, 'sending "%s"' % message
     sock.sendall(message)
 
